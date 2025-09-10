@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import List from "./DataApi"
 import { useCart } from '../Context/CartContext'
-import { useNavigate } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 
 function Hero() {
     const [FeaturedProducts,setFeaturedProducts]=useState(List.FeaturedProducts)
@@ -23,34 +23,22 @@ function Hero() {
     <h2 className="text-2xl font-bold mb-6 text-gray-50">Featured Products</h2>
     <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
 
+    {/* <!-- PRODUCT --> */}
  {FeaturedProducts.map((e,i)=>{
-    return(<div key={i}>
-    {/* <!-- PRODUCT 4 --> */}
-<div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+    return(
+    <NavLink to={`/product`} key={i}>
+      
+<div className=" overflow-hidden max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
   {/* <!-- Image Container --> */}
-  <div className="relative group">
-    <a href="product_detail_page.html"><img className="rounded-t-lg w-full " src={e.ImgUrl} alt="JORDAN 1 RETRO HIGH DIOR" /></a>
+  <div className="relative group boxele">
+    <div className=" absolute h-full w-full  hover:bg-[#1111116e] cursor-pointer"></div>
+    
+    <img className="rounded-t-lg w-full h-[45vh] object-cover " src={e.ImgUrl} alt="JORDAN 1 RETRO HIGH DIOR" />
+  <h5 className=' absolute bottom-0 mb-2 ml-3 cursor-pointer text-lg font-bold tracking-tight text-gray-900 dark:text-white '>{e.title}</h5>
 
-    {/* <!-- Wishlist Icon (top-right of image) --> */}
-        {/* <a href="#" className="absolute top-3 right-3 bg-white text-red-500 p-3 rounded-full shadow-lg opacity-0 -translate-y-6 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300"><!-- Heart Icon SVG --></a> */}
-    {/* <!-- Cart Icon (bottom-right of image) --> */}
-    {/* <a href="cart.html" className="absolute bottom-3 right-3 bg-blue-600 text-white p-3 rounded-full shadow-lg  opacity-0 translate-y-6 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300"><!-- Cart Icon SVG --></a> */}
   </div>
-
-  {/* <!-- Product Info --> */}
-  <div className="p-5">
-    <a href="product_detail_page.html"><h5 className="mb-2 text-lg font-bold tracking-tight text-gray-900 dark:text-white">{e.title}</h5></a>
-    <p className="mb-3 font-normal text-gray-300">MRP Rs {e.price}</p>
-    <button onClick={
-        ()=>{
-        // handleAddToCart(e)
-        navigate("/cart")
-        }
-        
-    } className="mt-3 block bg-black text-white px-4 py-2 rounded-lg hover:bg-gray-900 text-center">Buy Now</button>
-      </div>
 </div>
-    </div>)
+    </NavLink>)
  })}
 
 
@@ -63,33 +51,23 @@ function Hero() {
     <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
 
  {FreshArrivals.map((e,i)=>{
-    return(<div key={i}>
-    {/* <!-- PRODUCT 4 --> */}
+    return(<NavLink to={`product/${e._id.toString()}`} key={i}>
 <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
   {/* <!-- Image Container --> */}
-  <div className="relative group">
-    <a href="product_detail_page.html"><img className="rounded-t-lg w-full" src={e.ImgUrl} alt="JORDAN 1 RETRO HIGH DIOR" /></a>
+  <div className="relative group ">
 
-    {/* <!-- Wishlist Icon (top-right of image) --> */}
-        {/* <a href="#" className="absolute top-3 right-3 bg-white text-red-500 p-3 rounded-full shadow-lg opacity-0 -translate-y-6 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300"><!-- Heart Icon SVG --></a> */}
-    {/* <!-- Cart Icon (bottom-right of image) --> */}
-    {/* <a href="cart.html" className="absolute bottom-3 right-3 bg-blue-600 text-white p-3 rounded-full shadow-lg  opacity-0 translate-y-6 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300"><!-- Cart Icon SVG --></a> */}
+    <img className="rounded-t-lg w-full" src={e.ImgUrl} alt="JORDAN 1 RETRO HIGH DIOR" />
+
   </div>
 
   {/* <!-- Product Info --> */}
   <div className="p-5">
-    <a href="product_detail_page.html"><h5 className="mb-2 text-lg font-bold tracking-tight text-gray-900 dark:text-white">{e.title}</h5></a>
+    <h5 className="mb-2 text-lg font-bold tracking-tight text-gray-900 dark:text-white">{e.title}</h5>
     <p className="mb-3 font-normal text-gray-300">MRP Rs {e.price}</p>
-    <button onClick={
-        ()=>{
-        // handleAddToCart(e)
-        navigate("/cart")
-        }
-        
-    } className="mt-3 block bg-black text-white px-4 py-2 rounded-lg hover:bg-gray-900 text-center">Buy Now</button>
+    
       </div>
 </div>
-    </div>)
+    </NavLink>)
  })}
 
 

@@ -5,8 +5,7 @@ import Filter from "./Filter";
 import { NavLink } from "react-router-dom";
 
 function Product() {
-  let {handleAddToCart,handleRemoveToCart}=useCart()
-  let {product,setProduct,filtered}=useProduct()
+  let {filtered}=useProduct()
   // console.log(product);
   
   return (
@@ -25,12 +24,7 @@ function Product() {
 
       <div className="relative flex justify-center">
         <img src={p.images[0].url} alt={p.category} className="h-40 object-contain"/>
-    {/* <a href="cart.html"
-       className="absolute bottom-3 right-3 bg-blue-600 text-white p-3 rounded-full shadow-lg 
-              opacity-0 translate-y-6 group-hover:opacity-100 group-hover:translate-y-0 
-              transition-all duration-300">
-      <BsCart2 />
-    </a> */}
+
       </div>
 
       <div className="mt-4">
@@ -38,16 +32,14 @@ function Product() {
       </div>
 
       <h3 className="mt-3 font-semibold text-gray-800">{p.name}</h3>
+      <h3 className="text-gray-600 text-sm my-1">{p.brand} | {p.category}</h3>
 
-      <div className="mt-4 flex justify-between items-center">
+
+      <div className="flex justify-between items-center">
         <p className="text-gray-600 text-sm">Price</p>
         <p className="font-bold text-green-600 text-lg">₹{p.price}</p>
       </div>
       </NavLink>
-
-      <button onClick={()=>{handleAddToCart(p)}} className="mt-4 w-full bg-black text-white py-3 rounded-xl font-medium hover:bg-gray-800 transition">
-        Add to Cart
-      </button>
     </div>
     
     )})}

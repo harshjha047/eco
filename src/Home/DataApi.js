@@ -3,9 +3,10 @@ import { HiOutlineCube } from "react-icons/hi";
 import { RiLoopLeftFill } from "react-icons/ri";
 import { TbFocus2 } from "react-icons/tb";
 import ADIDASVENTO from "../media/ADIDASVENTO.jpg";
-import JORDAN1LOWSEBLACKTOE from "../media/JORDAN1LOWSEBLACKTOE.jpg";
-import LVTRAINERMONOGRAMDENIMWHITEBLUE from "../media/LVTRAINERMONOGRAMDENIMWHITEBLUE.jpg";
-import NEWBALANCE9060 from "../media/NEWBALANCE9060.jpg";
+import ASICS from "../media/ASICS.jpeg";
+import adidasF from "../media/adidasF.jpeg";
+import Nike from "../media/Nike.jpeg";
+import pumaF from "../media/pumaF.jpeg";
 const List = {
   FooterGoodwill: [
     {
@@ -39,43 +40,43 @@ const List = {
   ],
   FeaturedProducts: [
     {
-      title: "JORDAN 1 RETRO OG SPIDER",
-      ImgUrl: ADIDASVENTO,
-      price: "19,999",
+      title: "Nike",
+      ImgUrl: Nike,
     },
     {
-      title: "JORDAN 1 RETRO OG SPIDER",
-      ImgUrl: ADIDASVENTO,
-      price: "19,999",
+      title: "Adidas",
+      ImgUrl: adidasF,
     },
     {
-      title: "JORDAN 1 RETRO OG SPIDER",
-      ImgUrl: ADIDASVENTO,
-      price: "19,999",
+      title: "Asics",
+      ImgUrl: ASICS,
     },
     {
-      title: "JORDAN 1 RETRO OG SPIDER",
-      ImgUrl: ADIDASVENTO,
-      price: "19,999",
+      title: "Puma",
+      ImgUrl: pumaF,
     },
   ],
     FreshArrivals: [
     {
+      _id:1,
       title: "JORDAN 1 RETRO OG SPIDER",
       ImgUrl: ADIDASVENTO,
       price: "19,999",
     },
     {
+      _id:2,
       title: "JORDAN 1 RETRO OG SPIDER",
       ImgUrl: ADIDASVENTO,
       price: "19,999",
     },
     {
+      _id:3,
       title: "JORDAN 1 RETRO OG SPIDER",
       ImgUrl: ADIDASVENTO,
       price: "19,999",
     },
     {
+      _id:4,
       title: "JORDAN 1 RETRO OG SPIDER",
       ImgUrl: ADIDASVENTO,
       price: "19,999",
